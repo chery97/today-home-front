@@ -1,40 +1,135 @@
 import styled, {css} from 'styled-components';
+import tw from "twin.macro";
 
 export const HeaderLayout = styled.div`
     max-width: 2545px;
     border-bottom: 1px solid #EAEDEF;
 `;
 
+export const GnbContainer = styled.div`
+  display: flex;
+  max-width: 1256px;
+  margin: 0 auto;
+  padding: 0 60px;
+  height: inherit;
+  align-items: center;
+  ${tw`
+        overflow-hidden
+    `}
+`;
+
 export const GnbLayout = styled.div`
-    max-width: 2545px;
-    height: 51px;
-    border-top: 1px solid #EAEDEF;
-  
-    span {
-      height: inherit;
-      margin: 0 5px;
-    }
+  height: 51px;
+
+  span {
+    height: inherit;
+    margin: 0 5px;
+  }
 `;
 
 export const Gnb = styled.nav`
-    display: flex;
-    max-width: 1256px;
-    margin: 0 auto;
-    padding: 0 60px;
-    height: inherit;
-    align-items: center;
+     display: flex;
+     max-width: 920px;
   
-    a {
-      padding: 0 10px;
-      margin: -4px;
-      text-decoration: none;
+    ${tw`
+        overflow-hidden
+        h-full
+    `}
+`;
+
+export const GnbFont = styled.a`
+    ${tw`
+        text-tit-black
+        font-bold
+        text-base
+        hover:text-sky-blue
+        h-full
+        px-6px
+        py-12px
+        w-auto
+        decoration-0
+    `}
+    
+    span {
+      ${tw`
+        block
+        whitespace-nowrap
+        h-full
+      `}
+    }
+
+    ${props =>
+            props.active1 &&
+            tw`
+          text-sky-blue
+          border-b-2
+          border-sky-blue
+        `
     }
 `;
 
-export const GnbFont = styled.span`
-    font-size: 16px;
-    font-weight: bold;
-    color: #2F3438;
+export const RankLayout = styled.div`
+  ${tw`
+    h-51px
+    flex
+    justify-center
+    items-center
+  `}
+`;
+
+export const Rankcont = styled.div`
+  ${tw`
+    invisible
+    group-hover:visible
+    shadow-lg
+    rounded-md
+    translate-y-56
+    bg-white
+    absolute
+    w-270px
+    h-480px
+    z-50
+    py-5
+  `}
+`;
+
+export const RankTitle = styled.div`
+  ${tw`
+    mr-4
+    mb-2
+    ml-4
+  `}
+`;
+
+export const Ranking = styled.div`
+    ${tw`
+        w-full
+        h-full
+    `}
+    
+    a {
+      ${tw`
+        flex
+        h-10
+        mx-4
+        my-2
+        items-center
+      `}
+    }
+
+      div {
+        ${tw`
+            h-6
+            w-full
+          `}
+      }
+  
+    span {
+      &&:first-child {
+        width: 20px;
+        height: 20px;  
+      }
+    }
 `;
 
 export const HeaderContainer = styled.div`
@@ -53,19 +148,26 @@ export const CategoryContainer = styled.div`
     -webkit-flex: 1 1;
     -ms-flex: 1 1;
     flex: 1 1;
-    a {
+`;
+
+export const CategoryCont = styled.a`
       padding: 21px 5px 15px;
       margin: 0 10px;
       font-weight: bold;
       font-size: 18px;
-    }
-  
-    span {
-      padding: 4px;
-      margin: -4px;
-      font-size: 18px;
-      font-weight: bold;
-    }
+      ${tw`text-tit-black hover:text-sky-blue cursor-pointer`}
+      ${props =>
+          props.active &&
+          tw`
+          text-sky-blue
+          `
+      }
+      span {
+        padding: 4px;
+        margin: -4px;
+        font-size: 18px;
+        font-weight: bold;
+      }
 `;
 
 export const SideButtonContainer = styled.div`
@@ -106,42 +208,54 @@ export const RightBtn = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
-  a {
-    padding: 0 10px;
-    border-left: 1px solid #EAEDEF;
-    color: #2F3438;
-    text-decoration: none;
+`;
 
-    &:first-child {
-      border-left: none;
-    }
-  }
+export const RightBtnCont = styled.a`
+  ${tw`
+    text-sm
+    px-3
+    border-l
+    text-tit-black
+  `}
   
-  button {
-    width: 92px;
-    height: 40px;
-    background-color: #35C5F0;
-    border-radius: 4px;
-    border: none;
-    color: #FFFFFF;
-    font-size: 14px;
-    font-weight: 400;
+  ${props =>
+    props.none &&
+    tw`
+      border-none
+      `
   }
 `;
 
-export const Logo = styled.div`
-    padding-right: 35px;
-    font-size: 25px;
-    font-weight: bold;
-    width: 112px;
-    height: 30px;
+export const WriteBtn = styled.button`
+  ${tw`
+    inline-flex
+    items-center
+    rounded-md
+    w-24
+    h-10
+    bg-sky-blue
+    hover:bg-sky-blue-hover
+  `}
   
-    a {
+  & {
+    span {
+      ${tw`inline-flex rounded-md border-none items-center text-sm w-full text-white px-4 h-10`}
+    }
+  }
+`;
+
+export const Logo = styled.a`
+  ${tw`
+    text-2xl
+    text-tit-black
+    font-bold
+    w-112px
+    h-30px
+    cursor-pointer
+  `}
+  
+    div {
       width: 100%;
+      height: 100%;
     }
-`;
-
-export const LogoA = styled.a`
-    
 `;
