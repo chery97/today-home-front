@@ -31,7 +31,7 @@ const Header = ({ children, ...props }) => {
                     <div>오늘의집</div>
                 </Logo>
                 <CategoryContainer>
-                    <CategoryCont active>
+                    <CategoryCont active="true">
                         <span>커뮤니티</span>
                     </CategoryCont>
                     <CategoryCont>
@@ -44,11 +44,11 @@ const Header = ({ children, ...props }) => {
                 <SideButtonContainer>
                     <SearchBox>
                         <InputBox padding="7" type="image" src="https://www.esthermall.co.kr/data/skin/front/moment/img/icon/ico_gnb_search.svg"/>
-                        <InputBox search type="text" placeholder="통합검색"/>
+                        <InputBox search="true" type="text" placeholder="통합검색"/>
                     </SearchBox>
                     <RightBtnBox>
                         <RightBtn>
-                            <RightBtnCont href="/login" none>로그인</RightBtnCont>
+                            <RightBtnCont href="/login" none="true">로그인</RightBtnCont>
                             <RightBtnCont href="/join">회원가입</RightBtnCont>
                             <RightBtnCont href="/service">고객센터</RightBtnCont>
                             <WriteBtn>
@@ -64,7 +64,7 @@ const Header = ({ children, ...props }) => {
             <GnbContainer>
                 <GnbLayout>
                     <Gnb>
-                        <GnbFont href="/login" active1>
+                        <GnbFont href="/login" active="true">
                             <span>홈</span>
                         </GnbFont>
                         <GnbFont href="/login">

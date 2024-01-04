@@ -47,7 +47,7 @@ export const GnbFont = styled.a`
         px-6px
         py-12px
         w-auto
-        decoration-0
+        no-underline
     `}
     
     span {
@@ -58,14 +58,7 @@ export const GnbFont = styled.a`
       `}
     }
 
-    ${props =>
-            props.active1 &&
-            tw`
-          text-sky-blue
-          border-b-2
-          border-sky-blue
-        `
-    }
+
 `;
 
 export const RankLayout = styled.div`
@@ -216,6 +209,7 @@ export const RightBtnCont = styled.a`
     px-3
     border-l
     text-tit-black
+    no-underline
   `}
   
   ${props =>
@@ -252,6 +246,7 @@ export const Logo = styled.a`
     w-112px
     h-30px
     cursor-pointer
+    no-underline
   `}
   
     div {
